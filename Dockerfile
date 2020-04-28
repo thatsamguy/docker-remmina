@@ -9,16 +9,10 @@ LABEL maintainer="thelamer"
 
 RUN \
  echo "**** install packages ****" && \
+ add-apt-repository ppa:remmina-ppa-team/remmina-next && \
  apt-get update && \
  apt-get install -y \
-	remmina \
-	remmina-plugin-exec \
-	remmina-plugin-nx \
-	remmina-plugin-rdp \
-	remmina-plugin-spice \
-	remmina-plugin-telepathy \
-	remmina-plugin-vnc \
-	remmina-plugin-xdmcp && \
+	remmina && \
  echo "**** cleanup ****" && \
  apt-get clean && \
  rm -rf \
